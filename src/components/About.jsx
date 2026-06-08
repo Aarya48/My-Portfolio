@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-
+import profilephoto from "./profilephoto.png"
 import { styles } from "../styles";
 import { services } from "./constants";
 import { SectionWrapper } from "../hoc";
@@ -43,12 +43,22 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-       I'm a passionate Full-Stack Web Developer with expertise in JavaScript, React, Node.js, Express.js, and MongoDB. I enjoy building modern, scalable, and user-friendly web applications that solve real-world problems. As a quick learner and problem solver, I continuously explore new technologies, strengthen my development skills, and create impactful digital experiences through clean and efficient code.
-      </motion.p>
+      <div className='mt-8 flex flex-col md:flex-row items-center gap-8'>
+        <div className='w-full md:w-1/3 flex justify-center'>
+          <img
+            src={profilephoto}
+            alt='Profile'
+            className='w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-lg'
+          />
+        </div>
+
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='text-secondary text-[17px] max-w-3xl leading-[30px]'
+        >
+         I'm a passionate Full-Stack Web Developer with expertise in JavaScript, React, Node.js, Express.js, and MongoDB. I enjoy building modern, scalable, and user-friendly web applications that solve real-world problems. As a quick learner and problem solver, I continuously explore new technologies, strengthen my development skills, and create impactful digital experiences through clean and efficient code.
+        </motion.p>
+      </div>
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
